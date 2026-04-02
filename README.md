@@ -1,38 +1,42 @@
-
 # Sistem Event Lucky Draw
-## 🛠️ Tech Stack & Libraries
+
+## Tech Stack & Libraries
 **Frontend:**
-* **Nuxt.js (v4 minimal setup):** Framework Vue.js untuk UI .
-* **Tailwind CSS:** untuk styling yang cepat dan responsif.
+* **Nuxt.js (v4):** Framework utama.
+* **@nuxtjs/tailwindcss:** Untuk desain UI yang.
 
 **Backend & Database:**
-* **Express.js:** Framework Node.js untuk membuat RESTful API.
-* **better-sqlite3:** Library SQL untuk Node.js.
-* **cors:** *untuk komunikasi lintas port (Frontend ke Backend).
+* **Express.js:** Server API.
+* **better-sqlite3:** Database engine (SQLite).
+* **cors:**  komunikasi lintas port.
 
 ## 1. Prasyarat (Prerequisites)
-**Node.js**: Versi v20+.
-**Package Manager**: `npm` (v9+), `yarn`, atau `pnpm`.
-
+* **Node.js**: Versi v21+ sangat disarankan.
+* **Package Manager**: `npm`.
 
 ## 2. Instalasi Dependensi
-Proyek ini dibagi menjadi dua direktori utama: `frontend` dan `backend`. Anda perlu menginstal dependensi untuk keduanya secara terpisah.
+Anda perlu menginstal dependensi di kedua folder agar aplikasi berjalan sempurna.
 
-
-
-**Instal Dependensi Backend:**
+**Instal Backend (Express, SQLite, Cors):**
 
 cd backend
-npm install
+npm install express better-sqlite3 cors
 
-**Running Server Backend:**
+**Instal Frontend (tailwind):**
+cd frontend
+npm install
+npm install -D @nuxtjs/tailwindcss
+
+**Konfigurasi Tailwind**
+Pastikan modul Tailwind sudah terdaftar di file frontend/nuxt.config.ts:
+export default defineNuxtConfig({
+  modules: ['@nuxtjs/tailwindcss']
+})
+
+**Menjalankan Backend**
 cd backend
 node app.js
 
-**Instal Dependensi Backend:**
-cd frontend
-npm install
-
-**Running Server Frontend:**
+**Menjalankan Frontend**
 cd frontend
 npm run dev
